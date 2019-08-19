@@ -4,4 +4,14 @@
     = f.label t ".name", class: "control-label"
     = f.text_field :name, class: "form-control", required: true
 
+  .form-group
+    = f.label t(".favorite"), class: "control-label"
+    - if @location.id.present?
+      select.form-control.select2 multiple="true" name="favorite[]"
+        = @favorites_spaces.each do |fa|
+          option selected="selected" value="#{fa}" = fa
+    - else
+      = select_tag :favorite, options_for_select(select_favorite), {class: "select2 form-control", multiple: true}
+    .well#console
+      h5 = t ".new"
   = f.submit t(".submit"), class: "btn btn-primary"

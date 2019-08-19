@@ -5,6 +5,7 @@
 //= require toastr
 //= require datatable
 //= require manager/custom
+//= require select2
 
 /*global toastr*/
 toastr.options = {

@@ -151,5 +151,26 @@ i.fa.fa-caret-down {
 #admin_avatar{
   margin-top: 27px;
   padding: 3px;
+}
 
+/*******Locations*******/
+.link-to-edit:hover {
+  text-decoration: none;
+  color: #4e73df;
+}
+.link-to-edit {
+  color: #A9A9A9;
+}
+.well {
+  border: 1px solid #aaa;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.select2-selection__choice {
+  background: #36b9cc!important;
+  color: #fff;
+}
+.select2-selection__choice__remove {
+  color: #ffc107!important;
 }

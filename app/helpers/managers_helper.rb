@@ -8,4 +8,8 @@ module ManagersHelper
   def build_location_for_rooms
     Location.sort_by_name.map { |l| [l.name, l.id] }
   end
+
+  def select_favorite
+    FavoriteSpace.all.map { |f| [f.name] }
+  end
 end
