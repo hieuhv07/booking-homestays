@@ -66,6 +66,16 @@ en:
         create: "Create"
       form:
         cancel: "Cancel"
+    utilities:
+      form:
+        name: "Name"
+        submit: "Save Changes"
+      new:
+        title: "New Utilities"
+        add: "New Utilities"
+      create:
+        success: "Create utility successfully!"
+        danger: "Create utility has problem!"
   messages:
     success:
       admins:
