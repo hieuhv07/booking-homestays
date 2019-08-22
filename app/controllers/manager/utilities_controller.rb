@@ -2,6 +2,12 @@
 
 module Manager
   class UtilitiesController < BaseController
+    before_action :load_utility, only: %i[edit update]
+
+    def index
+      @utilities = Utility.newest.page(params[:page]).per Settings.utility_per
+    end
+
     def new
       @utility = Utility.new
     end
@@ -16,10 +22,25 @@ module Manager
       end
     end
 
+    def edit; end
+
+    def update
+      if @utility.update utility_params
+        redirect_to manager_utilities_path, success: t(".success")
+      else
+        flash.now[:danger] = t ".danger"
+        render :dit
+      end
+    end
+
     private
 
     def utility_params
       params.require(:utility).permit :name
+    end
+
+    def load_utility
+      @utility = Utility.find params[:id]
     end
   end
 end

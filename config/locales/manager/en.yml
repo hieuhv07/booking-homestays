@@ -76,6 +76,19 @@ en:
       create:
         success: "Create utility successfully!"
         danger: "Create utility has problem!"
+      update:
+        success: "Update utility successfully!"
+        danger: "Update utility has problem!"
+      edit:
+        title: "Edit Utilities"
+      utility:
+        delete: "Delete"
+      index:
+        key: "#"
+        name: "Name"
+        action: "Action"
+        title: "Utilities"
+
   messages:
     success:
       admins:
