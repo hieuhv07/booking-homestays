@@ -2,7 +2,7 @@
 
 module Manager
   class UtilitiesController < BaseController
-    before_action :load_utility, only: %i[edit update]
+    before_action :load_utility, only: %i[edit update destroy]
 
     def index
       @utilities = Utility.newest.page(params[:page]).per Settings.utility_per
@@ -31,6 +31,15 @@ module Manager
         flash.now[:danger] = t ".danger"
         render :dit
       end
+    end
+
+    def destroy
+      if @utility.destroy
+        flash[:success] = t ".success"
+      else
+        flash[:danger] = t ".danger"
+      end
+      redirect_to manager_utilities_path
     end
 
     private

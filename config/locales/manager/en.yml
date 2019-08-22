@@ -83,11 +83,15 @@ en:
         title: "Edit Utilities"
       utility:
         delete: "Delete"
+        sure: "Are you sure?"
       index:
         key: "#"
         name: "Name"
         action: "Action"
         title: "Utilities"
+      destroy:
+        success: "Delete utility successfully!"
+        danger: "Delete utility has problem!"
 
   messages:
     success:
