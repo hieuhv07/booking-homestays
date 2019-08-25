@@ -6,5 +6,5 @@ class Location < ApplicationRecord
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
-  scope :newest, -> { order created_at: :desc }
+  scope :newest, ->{ order created_at: :desc }
 end

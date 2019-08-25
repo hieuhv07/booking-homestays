@@ -1,0 +1,14 @@
+#new_address_modal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title = t ".new"
+        button.close data-dismiss="modal" type="button"  ×
+      .modal-body
+        = form_for @area.addresses.build, url: manager_area_addresses_path(@area), html: {id: "new-address"} do |f|
+          = f.hidden_field :area_id, value: @area.id
+          .form-group
+            = f.text_field :name, class: "form-control name_address", placeholder: t(".enter_name")
+          = f.submit t(".save"), class: "btn btn-primary"
+      .modal-footer
+        button.btn.btn-danger data-dismiss="modal" type="button"= t ".close"

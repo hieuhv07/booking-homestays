@@ -12,10 +12,9 @@ html
       .col-md-3.left-menu
         = render "shared/manager/left_menu"
       #content-wrapper.d-flex.flex-column.col-md-9
-        #content
-          = render "shared/manager/top"
-          .container-fluid
-            = render "layouts/flashmessages"
-            .main_content
+          #content
+            = render "shared/manager/top"
+            .container-fluid
+              = render "layouts/flashmessages"
               = yield
-              = render "shared/manager/footer"
+          = render "shared/manager/footer"

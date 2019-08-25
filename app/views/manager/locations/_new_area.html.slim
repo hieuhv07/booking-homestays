@@ -1,0 +1,14 @@
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title = t ".new"
+        button.close data-dismiss="modal" type="button"  ×
+      .modal-body
+        = form_for @location.areas.build, url: manager_location_areas_path(@location), html: {id: "new-areas"} do |f|
+          = f.hidden_field :location_id, value: @location.id
+          .form-group
+            = f.text_field :name, class: "form-control name_area"
+          = f.submit t(".save"), class: "btn btn-primary"
+      .modal-footer
+        button.btn.btn-danger data-dismiss="modal" type="button"= t ".close"
