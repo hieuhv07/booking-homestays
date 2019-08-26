@@ -106,6 +106,16 @@ en:
       new:
         create: "Create"
         new_member: "New Member"
+    trends:
+      form:
+        name: "Name"
+        description: "Description"
+        submit: "Save Changes"
+      new:
+        title: "New Trends"
+      create:
+        success: "Create trend successfully!"
+        danger: "Create trend has problem!"
   messages:
     success:
       admins:
