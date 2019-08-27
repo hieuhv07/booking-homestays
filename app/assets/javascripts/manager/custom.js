@@ -10,6 +10,23 @@ function readURL(f, previewId) {
 }
 
 $(document).ready(function(){
+
+  $(".select2").select2({
+    placeholder: "Select option tags",
+    createTag: function (params) {
+      var term = $.trim(params.term);
+      if (term === '') {
+        return null;
+      }
+      return {
+        id: term,
+        text: term,
+        newTag: true,
+        tokenSeparators: [",", " "]
+      }
+    }
+  });
+
   $('#admin_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
@@ -39,9 +56,7 @@ $(document).ready(function(){
       dropdownContent.css('display', 'block');
     }
   });
-});
 
-$(document).ready(function() {
   $(".account").click(function() {
     var getID=$(this).attr('id');
     if(getID==1) {

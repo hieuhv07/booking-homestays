@@ -2,7 +2,7 @@
 
 module Manager
   class TrendsController < BaseController
-    before_action :load_trend, only: %i[edit update destroy]
+    before_action :load_trend, only: %i[edit update destroy convert_status]
 
     def index
       @trends = Trend.newest.page(params[:pager]).per Settings.trend_per
@@ -41,10 +41,21 @@ module Manager
       end
     end
 
+    def convert_status
+      respond_to do |format|
+        @trend.status = @trend.active? ? :inactive : :active
+        if @trend.save
+          format.js { flash.now[:success] = t ".success" }
+        else
+          format.js { flash.now[:danger] = t ".danger" }
+        end
+      end
+    end
+
     private
 
     def trend_params
-      params.require(:trend).permit :name, :description
+      params.require(:trend).permit :name, :description, :status, room_ids: []
     end
 
     def load_trend

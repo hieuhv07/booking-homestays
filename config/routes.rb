@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :rooms
     resources :admins
     resources :prices
-    resources :trends
+    resources :trends do
+      patch :convert_status, on: :member
+    end
     resources :locations do
       resources :areas
     end

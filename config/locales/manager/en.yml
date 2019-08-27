@@ -111,6 +111,8 @@ en:
         name: "Name"
         description: "Description"
         submit: "Save Changes"
+        trend_room: "Trend Rooms"
+        status: "Status"
       new:
         title: "New Trends"
       edit:
@@ -127,6 +129,7 @@ en:
         key: "#"
         name: "Name"
         description: "Description"
+        status: "Status"
         action: "Action"
       update:
         success: "Update trend successfully!"
@@ -134,6 +137,9 @@ en:
       destroy:
         success: "Destroy trend successfully!"
         danger: "Destroy trend has problem!"
+      convert_status:
+        success: "Convert status successfully!"
+        danger: "Convert status has problem!"
   messages:
     success:
       admins:

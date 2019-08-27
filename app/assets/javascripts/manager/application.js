@@ -5,7 +5,7 @@
 //= require toastr
 //= require datatable
 //= require manager/custom
-//= require jquery-ui
+//= require select2
 
 /*global toastr*/
 toastr.options = {
