@@ -2,7 +2,7 @@
 
 module Manager
   class TrendsController < BaseController
-    before_action :load_trend, only: %i[edit update]
+    before_action :load_trend, only: %i[edit update destroy]
 
     def index
       @trends = Trend.newest.page(params[:pager]).per Settings.trend_per
@@ -30,6 +30,14 @@ module Manager
       else
         flash.now[:danger] = t ".danger"
         render :edit
+      end
+    end
+
+    def destroy
+      if @trend.destroy
+        redirect_to manager_trends_path, success: t(".success")
+      else
+        redirect_to manager_trends_path, danger: t(".danger")
       end
     end
 

@@ -120,6 +120,7 @@ en:
         danger: "Create trend has problem!"
       trend:
         delete: "Delete"
+        sure: "Are you sure?"
       index:
         title: "Trends"
         new_trend: "New Trends"
@@ -130,6 +131,9 @@ en:
       update:
         success: "Update trend successfully!"
         danger: "Update trend has problem!"
+      destroy:
+        success: "Destroy trend successfully!"
+        danger: "Destroy trend has problem!"
   messages:
     success:
       admins:
