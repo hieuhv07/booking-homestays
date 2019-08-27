@@ -1,0 +1,9 @@
+tr
+  td
+    = trend_counter.next
+  td
+    = link_to trend.name, edit_manager_trend_path(trend), class: "link-to-edit"
+  td
+    = trend.description
+  td
+    = link_to t(".delete"), "#", class: "btn btn-danger"

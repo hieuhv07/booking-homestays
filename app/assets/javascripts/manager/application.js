@@ -2,10 +2,10 @@
 //= require activestorage
 //= require jquery3
 //= require bootstrap
-//= require popper
 //= require toastr
 //= require datatable
 //= require manager/custom
+//= require jquery-ui
 
 /*global toastr*/
 toastr.options = {

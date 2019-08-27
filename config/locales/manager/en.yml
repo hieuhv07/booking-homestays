@@ -113,9 +113,23 @@ en:
         submit: "Save Changes"
       new:
         title: "New Trends"
+      edit:
+        title: "New Trends"
       create:
         success: "Create trend successfully!"
         danger: "Create trend has problem!"
+      trend:
+        delete: "Delete"
+      index:
+        title: "Trends"
+        new_trend: "New Trends"
+        key: "#"
+        name: "Name"
+        description: "Description"
+        action: "Action"
+      update:
+        success: "Update trend successfully!"
+        danger: "Update trend has problem!"
   messages:
     success:
       admins:

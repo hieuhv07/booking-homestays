@@ -3,6 +3,8 @@
 class Room < ApplicationRecord
   has_many_attached :images
   belongs_to :location
+  has_many :trend_rooms, dependent: :destroy
+  has_many :trends, through: :trend_rooms, foreign_key: :room_id
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 50 }
