@@ -845,3 +845,93 @@ ul.ui-autocomplete {
   overflow: auto;
   max-height: 400px;
 }
+
+/******Show all rooms*******/
+.carousel-item {
+  width: 100px;
+  height: auto;
+}
+
+.image-content {
+  height: 100%;
+}
+
+.room-image {
+  height: 45%;
+}
+
+.card-body {
+  width: 100%!important;
+  padding: 0!important;
+}
+
+.room-details {
+  width: 100%;
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.room-prices {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.card-favorite-spaces {
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: #888;
+  display: -webkit-box;
+  max-height: 1.5rem;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.promo-content {
+  margin-top: .5rem;
+  font-size: .875rem;
+}
+
+.room-title {
+  font-size: 1rem;
+  margin-bottom: 0;
+  display: -webkit-box;
+  max-height: 52px;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 900;
+}
+
+.room-title:hover {
+  color: #f65e39;
+}
+
+.room-locations {
+  margin-bottom: 6px;
+}
+
+.trend-title {
+  color: #222;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.trend-title:hover {
+  text-decoration: none;
+  color: #f65e39;
+}
+
+.info-rooms {
+  max-width: 100%;
+  padding: 10px;
+  margin: auto;
+  font-family: Luxstay;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}

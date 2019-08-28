@@ -48,11 +48,11 @@ end
   FavoriteSpace.create! name: favorite_space
 end
 
-
 20.times do |price|
   price = rand(1..999999)
+  cleaning = rand(1..99)
   Price.create!(cost: price,
-                cleaning_fee: price)
+                cleaning_fee: cleaning)
 end
 
 100.times do |n|
@@ -80,4 +80,24 @@ end
     bed_room: bed_room,
     bath_room: bath_room,
     price_id: price)
+end
+
+3.times do |n|
+  Trend.create!(name: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph,
+    status: 0)
+end
+
+20.times do |n|
+  TrendRoom.create!(trend_id: Trend.all.sample.id,
+    room_id: Room.all.sample.id)
+end
+
+["wifi", "TiVi", "Tủ Lạnh", "Máy Giặt", "Hồ Bơi", "Lò Vi Sóng", "Câu Cá", "BBQ", "Cho Thú Cưng"].each do |utility|
+  Utility.create! name: utility
+end
+
+20.times do |n|
+  RoomUtility.create!(room_id: Room.all.sample.id,
+    utility_id: Utility.all.sample.id)
 end
