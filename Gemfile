@@ -23,6 +23,11 @@ gem "kaminari", "~> 1.1", ">= 1.1.1"
 gem "bootstrap4-kaminari-views"
 gem "config", "~> 2.0"
 gem "cocoon"
+gem "carrierwave", "~> 0.10.0"
+gem "mini_magick", "~> 4.3"
+gem "select2-rails"
+gem "jquery-ui-rails"
+gem "bootstrap-datepicker-rails", "~> 1.8", ">= 1.8.0.1"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

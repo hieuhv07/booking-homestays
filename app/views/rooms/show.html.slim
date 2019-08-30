@@ -1,0 +1,166 @@
+.wapper.is-scrolling-top
+  .gallery
+    #demo.carousel.slide data-ride="carousel"
+      ul.carousel-indicators
+        - @room.room_images.each_with_index do |room, index|
+          li[class="#{'active' if index.zero?}" data-slide-to="" data-target="#demo"]
+      .carousel-inner
+        - @room.room_images.each_with_index do |room, index|
+          .carousel-item[class="#{'active' if index.zero?}"]
+            = image_tag room.image.url
+            .carousel-caption
+              h3 Los Angeles
+              p We had such a great time in LA!
+      a.carousel-control-prev data-slide="prev" href="#demo"
+        span.carousel-control-prev-icon
+      a.carousel-control-next data-slide="next" href="#demo"
+        span.carousel-control-next-icon
+.container
+  .row
+    .col-md-8
+      .title-room-detail
+        .title-room
+          = @room.name
+        .number-code
+          | Mã chỗ ở 11565
+        .detail-location
+          svg.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
+            g fill="none" fill-rule="evenodd"
+              circle cx="12" cy="12" fill="#000" fill-opacity=".2" fill-rule="nonzero" pid="0" r="12"
+              path d=("M11.92 6c2.87 0 5.218 2.335 5.218 5.205a5.112 5.112 0 0 1-1.055 3.137c-.97 1.252-3.77 3.461-3.882 3.56a.43.43 0 0 1-.282.098.43.43 0 0 1-.281-.098c-.113-.099-2.912-2.308-3.883-3.546a5.182 5.182 0 0 1-1.055-3.15C6.7 8.335 9.05 6 11.92 6zm0 7.203a2.104 2.104 0 0 0 0-4.207 2.104 2.104 0 0 0 0 4.206z") fill="#FFF" pid="1"
+          span.room-location
+            = @room.location_name
+            | , #{@room.address}, Vietnam
+          = link_to "Xem bản đồ", "#", class: "room-map"
+        .detail-favorite-space
+          svg.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
+            g fill="none" fill-rule="evenodd"
+              circle cx="12" cy="12" fill="#000" fill-opacity=".2" pid="0" r="12"
+              path d=("M7 17V8a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v9M8 7V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1m-6 1a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm-4 3a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm-4 3a1 1 0 0 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-7 3h10a1 1 0 0 1 1 1v1H6v-1a1 1 0 0 1 1-1z") fill="#FFF" pid="1"
+          span.room-favorite-space = @room.favorite_space_name.downcase.titleize
+          | ·
+          span.room-acreage = @room.acreage
+          | m
+          sub 2
+        .detail-bed-room
+          span
+            = @room.bed_room
+            |  phòng ngủ ·
+          span.ml-1
+            = @room.bath_room
+            |  phòng tắm ·
+          span.ml-1
+            = @room.guest
+            |  khách
+        .detail-description
+          h3.title-utility Chi tiết về phòng
+          = @room.description
+        .detail-utility
+          h3.title-utility Tiện nghi chỗ ở
+          span Giới thiệu về các tiện nghi và dịch vụ tại nơi lưu trú
+          ul.list-utility
+            - @room.utilities.each do |utility|
+              li.each-utility
+                i.fa.fa-grav
+                span.ml-2 = utility.name
+            end
+        .detail-utility
+          h3.title-utility Giá phòng
+          span Giá có thể tăng vào cuối tuần hoặc ngày lễ
+          .room-price
+            .is-flex.jbetween.align-center.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room Thứ hai - Thứ năm
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = @room.price.cost
+                | $
+            .is-flex.jbetween.align-center.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room Thứ sáu - Chủ nhật
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = @room.price.cost + 100
+                | $
+            .is-flex.jbetween.align-center.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room Phí khách tăng thêm(1 khách)
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                | 50.0$
+            .is-flex.jbetween.align-center.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room Phí dọn dẹp(nếu có)
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = @room.price.cleaning_fee
+                | $
+            .is-flex.jbetween.align-center.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room Số đêm tối thiểu
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                | 1 đêm
+        .detail-utility
+          h3.title-utility Chỗ ở tương tự
+          .row
+            - @rooms.each do |room|
+              .card.col-md-4 style=("width: 18rem;")
+                = link_to room_path(room), class: "room-image" do
+                  = image_tag "location_2.png", class: "card-img-top image-content"
+                .card-body.promo-content
+                  .card-favorite-spaces = room.favorite_space.name
+                  .room-title = link_to room.name, "#", class: "trend-title"
+                  .room-details
+                    = room.guest
+                    |  người - #{room.bed_room} phòng ngủ - #{room.bath_room} phòng tắm
+                  .room-prices
+                    | 1,003,476₫/đêm
+                  .room-locations
+                    = room.location_name
+                    | , #{room.address}
+    .col-md-4.right-room
+      .room-sidebar
+        .room-booking
+          p.room-sidebar__pricing
+            span.bold = @room.price_cost
+            | $
+            span.p--small.ml-2
+              |/đêm
+          .room-discount
+            span.label--cool-red Giảm 30% từ chủ nhà
+            p.room-discount-detail
+              | Giảm
+              strong 30%
+              | cho đặt phòng có checkin từ
+              strong 31/08
+              | đến
+              strong 02/09
+          .room-datepicker
+            span.room-sidebar__pricing Ngày đến
+            #datepicker-1.input-group.date data-date-format="dd-mm-yyyy"
+              input.form-control.date-info type="text" placeholder="dd-mm-yyyy"
+              span.input-group-addon
+                i.fa.fa-calendar.is-calendar
+            span.room-sidebar__pricing Ngày đi
+            #datepicker-2.input-group.date data-date-format="dd-mm-yyyy"
+              input.form-control.date-info type="text" placeholder="dd-mm-yyyy"
+              span.input-group-addon
+                i.fa.fa-calendar.is-calendar
+          .room-guest
+            select#exampleFormControlSelect1.form-control
+              option so khach
+              option 2
+              option 3
+              option 4
+              option 5
+          button#addtocart-btn.btn.btn-grad--primary.px--6.btn--sm.btn--full.mt--6.bold.rounded.btn.shadow-primary data-value="23126"
+            svg.mr--6.svg-icon.svg-fill style=("width: 20px; height: 20px;") version="1.1" viewbox=("0 0 20 20")
+              g fill="none" fill-rule="evenodd" transform=("translate(-2 -2)")
+                path d=("M0 0h24v24H0z") pid="0"
+                circle cx="12" cy="12" fill="#FFF" opacity=".3" pid="1" r="10"
+                path d=("M12.42 17.158l3.037-6.073a.75.75 0 0 0-.67-1.085H12V7.177a.75.75 0 0 0-1.42-.335l-3.037 6.073A.75.75 0 0 0 8.213 14H11v2.823a.75.75 0 0 0 1.42.335z") fill="#FFF" pid="2"
+            span.ml-2 Đặt ngay
+        .room-user
+          .room-user-info
+            = link_to "#", class: "host-intro" do
+              = image_tag "defaultavatar.jpeg", class: "image-circle"
+              .host-intro-name
+                p.p--big-2 = @room.user_name
+                p.p--small-2 Tham gia #{format_time @room.user.created_at}
+                p.p--small-2 = @room.user_type
+        .room-contact
+          p
+            | Gọi
+            b.ml-1> 18006586 (miễn phí)
+            | để được hỗ trợ 24/7

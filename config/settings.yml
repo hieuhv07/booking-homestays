@@ -1,1 +1,5 @@
 location_per: 10
+favorite_per: 10
+trend_per: 10
+room_per: 10
+room_limit: 4

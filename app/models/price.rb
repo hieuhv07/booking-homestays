@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 class Price < ApplicationRecord
+  has_many :bills, dependent: :destroy
+  has_many :vouchers, through: :bills
   before_destroy :destroy_vouchers
 
   has_many :bills, dependent: :destroy
-  has_many :vouchers, through: :bills, dependent: :destroy
+  has_many :vouchers, through: :bills
+  belongs_to :room
 
   validates :cost,
             format: { with: /\A\d+(?:\.\d{0,2})?\z/ },
