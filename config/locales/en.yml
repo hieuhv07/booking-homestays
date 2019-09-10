@@ -32,3 +32,4 @@ en:
         create_room: Create Rooms
         manager_admin: Manager admins
         location: "Manager Locations"
+        utility: "Manager Utilities"
