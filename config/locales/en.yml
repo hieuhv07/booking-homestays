@@ -1,33 +1,153 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  please_choose_one: please choose one
+  sure: "Are you sure?"
+  layouts:
+    header:
+      signup: "Sign Up"
+      signin: "Sign In"
+      signout: "Sign Out"
+      setting: "Settings"
+    manager:
+      title: "Booking Homestays"
+  messages:
+    success:
+      admins:
+        create: "Create success!"
+    failed:
+      admins:
+        create: "Create failed!"
+  manager:
+    rooms:
+      create_room: "Thank you to create room"
+      can't_create: "can not create room"
+      don't_have_location: "Don't have location, Please Create Location"
+      update_success: Update Success!
+      update_fail: Update Failed
+      deleted_success: Deleted success
+      deleted_fail: Deleted fail
+      new:
+        create_room: Create Room
+      edit:
+        edit_room: Edit Rooms
+        save: Save
+      room:
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        description: Description
+        room: Rooms
+        utility: Utilities
+        image: Images
+        guest: Guest
+        bed_room: Bed Rooms
+        bath_room: Bath Rooms
+        acreage: Acreage
+        address: Address
+        type_room: Type Rooms
+      form:
+        save: Save
+    utilities:
+      create_utility: Create Success
+      create_fail: can not create utility
+      new:
+        create_utility: Create
+
+  shared:
+    manager:
+      left_menu:
+        admin_manager: Admin Manager
+        dashboard: Dashboard
+        manager: Manager
+        location: Locations
+        room: Rooms
+        list: List Rooms
+        create_room: Create Rooms
+        location: "Manager Locations"
+        manager_admin: "Manager admins"
+        manager_member: "Manager members"
+        user: "User"
+      top:
+        logout: "Logout"
+        settings: "Settings"
+        profile: "Profile"
+    view_content:
+      welcome_title: "Sign up for more promotions and benefits"
+      welcome_des: "Swift, convenient, and safe. Sign up now for more interests."
+      lux_title: "Coin"
+      lux_des: "Earn Coins for each successful booking and use them for your next trips."
+      smart_title: "Smart functions"
+      smart_des: "Check-in and check your receipts offline. Refund faster and change calendar easier."
+      simple_title: "Simple payment"
+      simple_des: "Save card information in My Cards, much safer and convenient for the next payment."
+      promo_title: "New promotions every day"
+      promo_des: "Update promotions from Booking and choose great accommodation at your budget."
   hello: "Hello world"
+  sessions:
+    new_form:
+      login_btn: "Log in"
+      forgot_link: "Forgot your password?"
+      signup_link: "Sign Up"
+      resend_mail: "Resend confirmation mail?"
+  registrations:
+    new_form:
+      title: "Sign Up"
+      valid_pass: "(%{num} characters minimum)"
+      signup_btn: "Sign up"
+      login_link: "Login"
+    edit:
+      title: "Edit %{name}"
+      description_form: "Upload a photo..."
+      title_form: "Personal info"
+      not_change_password: "(leave blank if you don't want to change it)"
+      require_password: "(%{count} characters minimum)"
+      require_current_password: "(we need your current password to confirm your changes)"
+      more: "More"
+      update: "Update"
+      back: "Back"
+      wait_confirm: "Currently waiting confirmation for: %{unconfirm}"
+  passwords:
+    new_form:
+      title: "Forgot Your Password?"
+      description: "We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!"
+      reset_btn: "Reset Password"
+      login_link: "Already have an account? Login!"
+    edit_form:
+      title: "Change your password"
+      description: "Now, You can enter a new password for your account!"
+      valid_pass: "(%{num} characters minimum)"
+      change_btn: "Change my password"
+      login_link: "Already have an account? Login!"
+  confirmations:
+    new_form:
+      title: "Resend confirmation instructions"
+      description: "Enter your email to confirmation!"
+      resend_btn: "Resend confirmation"
+      login_link: "Log in"
+      signup_link: "Sign up"
+  home:
+    show:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+    index:
+      extra-bold: "Start your holidays at BookingHomestay"
+      description: "At this holidays, we have a promotion up to 50 %"
+  search:
+    index:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+      search_key: " has key '%{key}' "
+  activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            avatar:
+              not_valid: "wrong format or size is too big"
+              format: "wrong format"
+              size: "is too big"
+        member:
+          attributes:
+            avatar:
+              not_valid: "wrong format or size is too big"
+              format: "wrong format"
+              size: "is too big"

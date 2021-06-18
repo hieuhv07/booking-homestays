@@ -1,0 +1,10 @@
+- if @admin.errors.present?
+  |
+    $("#message_errors").html("#{j(render 'shared/manager/error_messages', object: @admin)}");
+    toastr.error("#{flash[:danger]}");
+    $(".modal").animate({scrollTop : 0},500);
+- else
+  |
+    $("#admin-modal").modal("hide")
+    $(".data-admin").html("#{j(render @admins)}")
+    toastr.success("#{flash[:success]}");

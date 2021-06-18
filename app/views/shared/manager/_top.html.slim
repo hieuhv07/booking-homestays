@@ -1,0 +1,19 @@
+nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+  form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+    .input-group
+      input.form-control.bg-light.border-0.small aria-describedby="basic-addon2" aria-label="Search" placeholder=("Search for...") type="text" /
+      .input-group-append
+        button.btn.btn-primary type="button"
+          i.fa.fa-search.fa-sm
+  .custom-dropdown
+    = link_to("#", class: "account", title: "#{current_admin.name}", "data-toggle": "tooltip", "data-placement": "left") do
+      span = truncate(current_admin.name, length: 10)
+      = image_tag current_admin.avatar.url, class: "profile-circle", id: "load-current"
+    .custom-submenu[style="display: none; "]
+      ul.custom-root
+        li
+          = link_to t(".profile"), "#"
+        li
+          = link_to t(".settings"), "#"
+        li
+          = link_to t(".logout"), destroy_admin_session_path, method: :delete

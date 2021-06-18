@@ -1,0 +1,252 @@
+en:
+  manager:
+    favorite_spaces:
+      create:
+        success: "Create successfully!!!"
+      update:
+        success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
+      new:
+        name: "Name"
+        create: "Create"
+        add: "New Favorite Spaces"
+        title: "New Favorite Spaces"
+      edit:
+        name: "Name"
+        update: "Update"
+        title: "Edit Favorite Spaces"
+        add: "Edit Favorite Spaces"
+        save: "Save Changes"
+      index:
+        new: "New Favorite Spaces"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        title: "Favorite Spaces"
+      favorite_space:
+        delete: "Delete"
+        sure: "Are you sure?"
+    locations:
+      form:
+        name: "Name"
+        submit: "Save changes"
+        favorite: "Favorite Spaces"
+      new:
+        add: "Add Locations"
+        title: "New locations"
+      create:
+        success: "Create locations successfully!"
+        danger: "Create locations has problem!"
+      edit:
+        edit: "Edit Locations"
+        title: "Edit locations"
+        area: "Areas"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        new_area: "New Area"
+      index:
+        title: "Locations"
+        new_location: "New Locations"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      location:
+        delete: "Delete"
+        sure: "Are you sure?"
+      destroy:
+        success: "Delete location successfully!"
+        danger: "Delete location has problem!"
+      update:
+        success: "Update location successfully!"
+        danger: "Update location has problem!"
+      new_area:
+        save: "Save Changes"
+        name: "Enter name..."
+        new: "New Areas"
+        btn: "×"
+        close: "Close"
+      area:
+        delete: "Delete"
+        sure: "Are you sure?"
+    areas:
+      create:
+        success: "Create area successfully!"
+        error: "Create area has problem!"
+      edit:
+        title: "Edit Areas"
+        name: "Name"
+        submit: "Save Changes"
+        address: "Address"
+        new_address: "New Address"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      update:
+        success: "Update area successfully!"
+        danger: "Update area has problem!"
+      destroy:
+        success: "Destroy area successfully!"
+        danger: "Destroy area has problem!"
+      new_address:
+        new: New Address
+        save: "Save Changes"
+        enter_name: "Enter address..."
+      address:
+        delete: "Delete"
+        sure: "Are you sure?"
+      edit_address:
+        edit: "Edit Address"
+        save: "Save Changes"
+        close: "Close"
+    addresses:
+      create:
+        success: "Create address successfully!"
+        danger: "Create address has problem!"
+      update:
+        success: "Update address successfully!"
+        danger: "Update address has problem!"
+    prices:
+      create:
+        success: "Create successfully!!!"
+      update:
+        success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
+      index:
+        new: "New"
+        listing_prices: "Listing prices"
+        destroy: "Destroy"
+        cost: "Cost"
+        sale: "Sale"
+        code: "Code"
+        total: "Total"
+        action: "Action"
+      form:
+        title: "Price"
+        add-voucher: "+ Add voucher"
+    admins:
+      admin:
+        edit: "Edit"
+        delete: "Delete"
+        updated: "Edited %{time}"
+        created: "Created %{time}"
+      edit:
+        edit_admin: "Edit Admin"
+        update: "Update"
+      new:
+        new_admin: "New Admin"
+        create: "Create"
+      form:
+        cancel: "Cancel"
+    areas:
+      create:
+        success: "Create area successfully!"
+        danger: "Create area has problem!"
+      index:
+        create: "Create"
+        all_admin: "All admins"
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        access: "Access"
+        action: "Action"
+      edit:
+        title: "Edit Areas"
+        name: "Name"
+        save: "Save Changes"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        address: "New Address"
+      update:
+        success: "Update area successfully!"
+        danger: "Update area has problem!"
+      destroy:
+        success: "Destroy area successfully!"
+        danger: "Destroy area has problem!"
+      new_address:
+        save: "Save Changes"
+        new: "New Address"
+        enter_name: "Enter name..."
+        close: "Close"
+        btn: "×"
+      address:
+        delete: "Delete"
+    members:
+      form:
+        error: "The form contains %{count}."
+        cancel: "Cancel"
+      member:
+        edit: "Edit"
+        delete: "Delete"
+        updated: "Edited %{time}"
+        created: "Created %{time}"
+        true: "True"
+        false: "False"
+      index:
+        create: "Create"
+        all_member: "All members"
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        access: "Access"
+        action: "Action"
+        active: "Active"
+      new:
+        create: "Create"
+        new_member: "New Member"
+      edit:
+        update: "Update"
+        edit_member: "Edit Member"
+    addresses:
+      create:
+        success: "Create address successfully!"
+        danger: "Create address has problem!"
+    passwords:
+      new:
+        title: "Forgot Your Password?"
+        description: "We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!"
+        reset_btn: "Reset Password"
+        login_link: "Already have an account? Login!"
+      edit:
+        title: "Change your password"
+        description: "Now, You can enter a new password for your account!"
+        valid_pass: "(%{num} characters minimum)"
+        pass_new: "New password"
+        pass_confirm: "Confirm new password"
+        change_btn: "Change my password"
+        login_link: "Already have an account? Login!"
+    sessions:
+      new:
+        title: Welcome Back!
+        login_btn: "Log in"
+        forgot_link: "Forgot your password?"
+  messages:
+    success:
+      admins:
+        create: "Create succeeded!"
+        update: "Update admin %{id} succeeded"
+        delete: "Delete admin %{id} succeeded"
+      members:
+        create: "Create succeeded!"
+        delete: "Delete member %{id} succeeded"
+        update: "Update member %{id} succeeded"
+    failed:
+      admins:
+        create: "Create failed!"
+        update: "Update admin %{id} failed"
+        delete: "Delete admin %{id} failed"
+      members:
+        create: "Create failed!"
+        delete: "Delete member %{id} failed"
+        update: "Update member %{id} failed"
+    notice:
+      admins:
+        not_edit: "Not edit admin %{id}"
+        not_default_admin: "You can not delete default admin!"
+      members:
+        not_edit: "Not edit member %{id}"

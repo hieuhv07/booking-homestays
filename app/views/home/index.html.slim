@@ -1,0 +1,19 @@
+.container.favorite-space
+  .title-favorite-space
+    h2.extra-bold.p--giant = t(".extra-bold")
+    p = t(".description")
+  #exampleSlider
+    .MS-content
+      - @favorite_spaces.each do |favorite_space|
+        .item
+          p
+            = image_tag "location_6"
+            br
+          .article_content
+            .article_content.bold.title-content.text-center
+              = link_to favorite_space.name, favorite_space_path(favorite_space)
+    .MS-controls
+      button.MS-left
+        i.fa.fa-arrow-left
+      button.MS-right
+        i.fa.fa-arrow-right

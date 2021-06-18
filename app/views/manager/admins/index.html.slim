@@ -1,0 +1,14 @@
+= link_to t(".create"), new_manager_admin_path, remote: true, class: "btn-primary create_user"
+h2#title-user = t(".all_admin")
+table#admin_table.table.table-striped.table-bordered style=("width: 100%")
+  thead
+    tr.header-user
+      th = t(".id")
+      th = t(".name")
+      th = t(".email")
+      th = t(".address")
+      th = t(".access")
+      th = t(".action")
+  tbody.data-admin
+    = render @admins
+#admin-modal.modal.fade

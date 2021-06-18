@@ -1,0 +1,39 @@
+ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+  = link_to manager_root_path, class: "sidebar-brand d-flex align-items-center justify-content-center" do
+    .sidebar-brand-icon.rotate-n-15
+      i.fa.fa-laugh-wink
+    .sidebar-brand-text.mx-3
+      = t ".admin_manager"
+  hr.sidebar-divider.my-0/
+  li.nav-item.active
+    = link_to manager_root_path, class: "nav-link" do
+      i.fa.fa-fw.fa-tachometer-alt
+      span = t ".dashboard"
+  hr.sidebar-divider.my-0/
+  li.nav-item
+    = link_to manager_locations_path, class: "nav-link collapsed" do
+      i.fa.fa-map-marker
+      span = t ".location"
+  li.nav-item
+    = link_to manager_favorite_spaces_path, class: "nav-link collapsed" do
+      i.fa.fa-star
+      span = t ".favorite_space"
+  li.nav-item.sidenav
+    .dropdown-btn.nav-link.collapsed
+      i.fa.fa-home
+      span = t ".room"
+      i.fa.fa-caret-down
+    .dropdown-container
+      = link_to t(".list"), manager_rooms_path, id: "drlayout"
+      = link_to t(".create_room"), new_manager_room_path, id: "dlayout"
+  li.nav-item.sidenav
+    .dropdown-btn.nav-link.collapsed
+      i.fa.fa-user
+      span = t ".user"
+      i.fa.fa-caret-down
+    .dropdown-container
+      - if current_admin.flag?
+        = link_to manager_admins_path, class: "nav-link collapsed" do
+          span = t ".manager_admin"
+      = link_to manager_members_path, class: "nav-link collapsed" do
+        span = t ".manager_member"

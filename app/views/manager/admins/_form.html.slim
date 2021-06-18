@@ -1,0 +1,33 @@
+.modal-dialog
+  .modal-content
+    = form_for [:manager, admin], remote: true, html: { style: "display:inline;" } do |f|
+      .modal-body
+        h3 style="text-align: center" = yield(:title)
+        #message_errors
+        hr
+        .form-group.row[style="padding: 25px"]
+          .col-sm-3
+            = image_tag admin.avatar.url, class: "avatar-default", id: "img_prev"
+          .prev.col-sm-9
+            = f.file_field :avatar, class: "form-control preview"
+        .form-group
+          = f.label :name, class: "control-label"
+          = f.text_field :name, class: "form-control", required: true
+        .form-group
+          = f.label :email, class: "control-label"
+          = f.text_field :email, class: "form-control", required: true, presence: true
+        .form-group
+          = f.label :address, class: "control-label"
+          = f.text_field :address, class: "form-control", required: true
+        .toggle
+          .form-group
+            = f.label :password, class: "control-label"
+            = f.password_field :password, class: "form-control"
+          .form-group
+            = f.label :password_confirmation, class: "control-label"
+            = f.password_field :password_confirmation, class: "form-control"
+      .modal-footer
+        - unless admin.new_record?
+          button.show.btn.btn-link type="button" style="color: inherit;" More
+        = f.submit yield(:btn_name), class: "btn btn-primary"
+        = link_to t(".cancel"), "#", class: "btn btn-danger", data: {dismiss: "modal"}
